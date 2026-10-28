@@ -1,5 +1,24 @@
-function app() {
-  return <h1>portafolio-mini</h1>
+import { Routes, Route } from 'react-router-dom'
+import Layout from './components/Layout'
+import Inicio from './pages/Inicio'
+import SobreMi from './pages/SobreMi'
+import Habilidades from './pages/Habilidades'
+import Proyectos from './pages/Proyectos'
+import Contacto from './pages/Contacto'
+
+function App() {
+  return (
+    <Routes>
+      <Route element={<Layout />}>
+        <Route index element={<Inicio />} />
+        <Route path="sobre-mi" element={<SobreMi />} />
+        <Route path="habilidades" element={<Habilidades />} />
+        <Route path="proyectos" element={<Proyectos />} />
+        <Route path="contacto" element={<Contacto />} />
+        <Route path="*" element={<h1>Página no encontrada</h1>} />
+      </Route>
+    </Routes>
+  )
 }
 
-export default app
+export default App
