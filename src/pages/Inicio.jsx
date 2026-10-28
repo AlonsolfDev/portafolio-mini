@@ -1,14 +1,18 @@
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 
-function Inicio() {
+export default function Inicio() {
   return (
-    <section className="inicio">
-      <h1>Tu Nombre</h1>
-      <p className="rol">Estudiante de Ingeniería en Informática</p>
-      <p>Bienvenido a mi portafolio!.</p>
-      <Link to="/proyectos" className="boton">Explorar</Link>
+    <section className="hero-container">
+      <div className="hero-card">
+        <h1>Alonso Lantaño</h1>
+        <p className="hero-role">Estudiante de Ingenieria Civil Informatica</p>
+        <p className="hero-description">
+          Bienvenido a mi portafolio. Aquí encontrarás lo que he aprendido durante el semestre en la asignatura de Frontend.
+        </p>
+        <Link to="/proyectos" className="hero-button">
+          Explorar
+        </Link>
+      </div>
     </section>
-  )
+  );
 }
-
-export default Inicio
