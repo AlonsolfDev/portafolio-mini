@@ -1,16 +1,54 @@
-# React + Vite
+# Mini Portafolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portafolio personal hecho con React, Vite y React Router. Tiene cinco secciones: Inicio, Sobre mí, Habilidades, Proyectos y Contacto.
 
-Currently, two official plugins are available:
+## Requisitos e instalación
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Node 20.19+ o 22.12+ y Git.
 
-## React Compiler
+```bash
+git clone https://github.com/AlonsolfDev/portafolio-mini.git
+cd portafolio-mini
+npm install
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Cómo ejecutarlo
 
-## Expanding the ESLint configuration
+```bash
+npm run dev
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Abre http://localhost:5173
+
+## Estructura de carpetas
+
+```
+src/
+  components/
+    Header.jsx              menú con NavLink
+    Footer.jsx              nombre y año
+    Layout.jsx              Header + Outlet + Footer
+    TarjetaProyecto.jsx     tarjeta que recibe props
+    FormularioContacto.jsx  formulario con estado y validación
+  pages/                    una página por ruta
+  App.jsx                   definición de rutas
+  main.jsx                  BrowserRouter
+  index.css                 estilos
+```
+
+## Rutas
+
+| Ruta | Página | Qué muestra |
+|---|---|---|
+| `/` | Inicio | Nombre, rol, bienvenida y botón Explorar |
+| `/sobre-mi` | Sobre mí | Estudios, intereses y metas |
+| `/habilidades` | Habilidades | Habilidades con nivel y herramientas |
+| `/proyectos` | Proyectos | Tarjetas con enlace a GitHub |
+| `/contacto` | Contacto | Formulario que valida y confirma |
+
+## Dificultades y soluciones
+
+1. **Carpetas con mayúscula.** `Components` y `Pages` quedaron con mayúscula inicial y los imports daban error. Las renombré a minúscula con `git mv`.
+2. **Comandos de Git en la carpeta equivocada.** La terminal estaba fuera del proyecto y `git add` no encontraba los archivos. Entré a `portafolio-mini` antes de ejecutarlos.
+3. **Commit olvidado.** Me salté el commit de una fase y lo hice después con `git add .`.
+4. **Servidor caído.** `localhost` rechazaba la conexión porque `npm run dev` no estaba corriendo en la carpeta del proyecto.
